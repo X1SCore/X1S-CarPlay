@@ -33,8 +33,6 @@ local function NetToVeh(net)
     return NetworkGetEntityFromNetworkId(net)
 end
 
--- All notifications go through X1S-LIB.
--- kind: "success" | "error" | "warning" | "info" (anything else -> info)
 local function Notify(msg, kind)
     if not msg or msg == "" then return end
     if kind ~= "success" and kind ~= "error" and kind ~= "warning" and kind ~= "info" then
@@ -111,7 +109,6 @@ local function GetDistanceFade(veh)
     return 1.0 - SmoothStep((d - fadeStart) / (fadeEnd - fadeStart))
 end
 
--- Where the fade and muffle multipliers WANT to be right now.
 local function GetFadeTargets(veh, pedVeh, prevMuffle)
     if pedVeh ~= 0 and pedVeh == veh then
         return 1.0, 1.0
@@ -379,7 +376,6 @@ RegisterNetEvent('x1s:notify', function(kind, message)
     Notify(message, kind)
 end)
 
--- Toasts raised from the CarPlay UI itself are forwarded to X1S-LIB too
 RegisterNUICallback("notify", function(data, cb)
     if data and data.message then
         Notify(tostring(data.message), data.type)
