@@ -2,7 +2,7 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'X1Studios'
-description 'CarPlay v2.5 - Fully Reworked UI and System (self-contained: bundles xSound, no separate resource needed)'
+description 'CarPlay v2.5 - Reworked to use X1S-LIB for X1SCore'
 version '2.5.0'
 
 dependency 'X1S-LIB'
