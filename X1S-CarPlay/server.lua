@@ -9,6 +9,7 @@ AddEventHandler('onResourceStart', function(resourceName)
  /_/ \_\  |_| |____/
 
   X1Studios CarPlay
+Reworked to use X1S-LIB
        v2.5.0
     ]])
 end)
